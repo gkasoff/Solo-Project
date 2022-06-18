@@ -2482,18 +2482,18 @@ function getData() {
     headers: {
       Accept: 'application/json'
     }
-  }; // fetch('/')
-  // .then(response => {
-  //     console.log('response', response)
-  //     response.json()
+  };
+  fetch('http://localhost:5000').then(function (response) {
+    console.log('response', response);
+    response.json();
+  }).then(function (data) {
+    return console.log(data);
+  }); // axios.get('https://swapi.dev/api/', config)
+  // // .then(res => res.json())
+  // .then(res => {
+  //     console.log('thiz ', res)
+  //     document.getElementById('data').innerHTML = res.data.results[Math.floor(Math.random() * 10)].name
   // })
-  // .then(data => console.log(data))
-
-  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/', config) // .then(res => res.json())
-  .then(function (res) {
-    console.log('thiz ', res);
-    document.getElementById('data').innerHTML = res.data.results[Math.floor(Math.random() * 10)].name;
-  });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);
@@ -3177,4 +3177,4 @@ console.log((0,_getData_js__WEBPACK_IMPORTED_MODULE_0__["default"])());
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleeee248cec4db3a7528b018b.js.map
+//# sourceMappingURL=bundleeee7804780ba2dfb67d0ec9.js.map

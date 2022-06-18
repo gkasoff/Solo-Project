@@ -23,6 +23,12 @@ module.exports = {
         hot: true,
         compress: true,
         historyApiFallback: true,
+        proxy: {
+            '/': {
+                target: 'http://localhost:5000/',
+                secure: false,
+            },
+        },
     },
     module: {
         rules: [
@@ -53,5 +59,5 @@ module.exports = {
             template: 'src/template.html'
         }),
         // new BundleAnalyzerPlugin(),
-    ]
+    ],
 }

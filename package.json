@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "nodemon": "nodemon server/server.js",
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "NODE_ENV=development concurrently \"nodemon server/server.js\" \"webpack serve --open \""
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "clone-deep": "^4.0.1",
     "colorette": "^2.0.19",
     "commander": "^2.20.3",
+    "cors": "^2.8.5",
     "cross-spawn": "^7.0.3",
     "electron-to-chromium": "^1.4.157",
     "enhanced-resolve": "^5.9.3",
