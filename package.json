@@ -4,7 +4,8 @@
   "description": "Here goes nothing!",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
+    "nodemon": "nodemon server/server.js",
     "build": "webpack",
     "dev": "webpack serve"
   },

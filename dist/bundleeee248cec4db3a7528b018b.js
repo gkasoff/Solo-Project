@@ -2482,9 +2482,16 @@ function getData() {
     headers: {
       Accept: 'application/json'
     }
-  };
-  axios__WEBPACK_IMPORTED_MODULE_0___default().get('https://swapi.dev/api/people/', config) // .then(res => res.json())
+  }; // fetch('/')
+  // .then(response => {
+  //     console.log('response', response)
+  //     response.json()
+  // })
+  // .then(data => console.log(data))
+
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/', config) // .then(res => res.json())
   .then(function (res) {
+    console.log('thiz ', res);
     document.getElementById('data').innerHTML = res.data.results[Math.floor(Math.random() * 10)].name;
   });
 }
@@ -3170,4 +3177,4 @@ console.log((0,_getData_js__WEBPACK_IMPORTED_MODULE_0__["default"])());
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleeeeb73e10caa08c3d59cfc6.js.map
+//# sourceMappingURL=bundleeee248cec4db3a7528b018b.js.map
