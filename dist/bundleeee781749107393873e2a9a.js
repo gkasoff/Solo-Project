@@ -2462,10 +2462,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./src/getData.js":
-/*!************************!*\
-  !*** ./src/getData.js ***!
-  \************************/
+/***/ "./client/getData.js":
+/*!***************************!*\
+  !*** ./client/getData.js ***!
+  \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2483,27 +2483,20 @@ function getData() {
       Accept: 'application/json'
     }
   };
-  fetch('http://localhost:5000').then(function (response) {
-    console.log('response', response);
-    response.json();
-  }).then(function (data) {
-    return console.log(data);
-  }); // axios.get('https://swapi.dev/api/', config)
-  // // .then(res => res.json())
-  // .then(res => {
-  //     console.log('thiz ', res)
-  //     document.getElementById('data').innerHTML = res.data.results[Math.floor(Math.random() * 10)].name
-  // })
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://localhost:5000/', config).then(function (res) {
+    console.log('rezzz', res.data);
+    document.getElementById('data').innerHTML = res.data.user;
+  });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.css":
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.css ***!
-  \**********************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/styles/main.css":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/styles/main.css ***!
+  \*************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2520,7 +2513,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h3 {\n  color: green;\n}\n\nimg {\n  height: 300px;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAAA;EACI,YAAA;AACJ;;AAEA;EACI,aAAA;AACJ","sourcesContent":["h3 {\n    color: green;\n}\n\nimg {\n    height: 300px\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h3 {\n  color: green;\n}\n\nimg {\n  height: 300px;\n}", "",{"version":3,"sources":["webpack://./client/styles/main.css"],"names":[],"mappings":"AAAA;EACI,YAAA;AACJ;;AAEA;EACI,aAAA;AACJ","sourcesContent":["h3 {\n    color: green;\n}\n\nimg {\n    height: 300px\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2671,10 +2664,10 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ "./src/styles/main.css":
-/*!*****************************!*\
-  !*** ./src/styles/main.css ***!
-  \*****************************/
+/***/ "./client/styles/main.css":
+/*!********************************!*\
+  !*** ./client/styles/main.css ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2694,7 +2687,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./main.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./main.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/styles/main.css");
 
       
       
@@ -3038,10 +3031,10 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/assets/pic.jpg":
-/*!****************************!*\
-  !*** ./src/assets/pic.jpg ***!
-  \****************************/
+/***/ "./client/assets/pic.jpg":
+/*!*******************************!*\
+  !*** ./client/assets/pic.jpg ***!
+  \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -3158,23 +3151,22 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/*!*************************!*\
+  !*** ./client/index.js ***!
+  \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _getData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData.js */ "./src/getData.js");
-/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
-/* harmony import */ var _assets_pic_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/pic.jpg */ "./src/assets/pic.jpg");
+/* harmony import */ var _getData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData.js */ "./client/getData.js");
+/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ "./client/styles/main.css");
+/* harmony import */ var _assets_pic_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/pic.jpg */ "./client/assets/pic.jpg");
 
 
 
 var greenImg = document.getElementById('greenImg');
 greenImg.src = _assets_pic_jpg__WEBPACK_IMPORTED_MODULE_2__;
 var dataBtn = document.getElementById('dataBtn');
-dataBtn.addEventListener('click', _getData_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
-console.log((0,_getData_js__WEBPACK_IMPORTED_MODULE_0__["default"])());
+dataBtn.addEventListener('click', _getData_js__WEBPACK_IMPORTED_MODULE_0__["default"]); // console.log(getData())
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleeee7804780ba2dfb67d0ec9.js.map
+//# sourceMappingURL=bundleeee781749107393873e2a9a.js.map

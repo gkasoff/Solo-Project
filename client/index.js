@@ -8,4 +8,4 @@ greenImg.src = pic
 const dataBtn = document.getElementById('dataBtn')
 dataBtn.addEventListener('click', getData)
 
-console.log(getData())
+// console.log(getData())

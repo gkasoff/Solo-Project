@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     mode: 'development',
     entry: {
-        bundleeee: path.resolve(__dirname, 'src/index.js')
+        bundleeee: path.resolve(__dirname, 'client/index.js')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -56,7 +56,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'This is ittt',
             filename: 'index.html',
-            template: 'src/template.html'
+            template: 'client/template.html'
         }),
         // new BundleAnalyzerPlugin(),
     ],
