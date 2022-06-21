@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const colors = require('colors')
-// require('dotenv').config();
+const dotenv = require('dotenv').config();
 const path = require('path')
 const cors = require('cors')
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/api', { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(cors());
 
-app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/goals', require('./routes/goalRoutes'))
 
 
 app.get('/', (req, res) => {
