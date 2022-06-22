@@ -52,8 +52,8 @@ const setGoal = async (req, res, next) => {
 // @route  Put /api/goals/:id
 // @access  Private
 const updateGoal = asyncHandler(async (req, res, next) => {
-    console.log(req.body)
-    console.log(res.locals.goal.name)
+    // console.log(req.body)
+    // console.log(res.locals.goal.name)
     if (req.body.name) {
         res.locals.goal.name = req.body.name
     }

@@ -5,3 +5,14 @@ h1 {
 img {
     height: 300px
 }
+
+.task {
+    background-color: pink;
+}
+
+path {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-content: flex-start;
+}

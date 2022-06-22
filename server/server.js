@@ -18,11 +18,6 @@ app.use(cors());
 
 app.use('/goals', require('./routes/goalRoutes'))
 
-
-app.get('/', (req, res) => {
-   return res.status(200).json({user: 'geek'})
-})
-
 app.use((err, req, res, next) => {
    const defaultErr = {
      log: 'Express error handler caught unknown middleware error',
