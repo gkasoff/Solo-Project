@@ -1,11 +1,6 @@
-import getData from './getData.js'
-import './styles/main.css'
-import pic from './assets/pic.jpg'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-const greenImg = document.getElementById('greenImg')
-greenImg.src = pic
 
-const dataBtn = document.getElementById('dataBtn')
-dataBtn.addEventListener('click', getData)
-
-// console.log(getData())
+ReactDOM.render(<App />, document.querySelector("#root"))
