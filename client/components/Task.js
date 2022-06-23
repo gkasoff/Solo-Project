@@ -10,8 +10,11 @@ const Task = (props) => {
                     onClick={() => props.onDelete(props.task._id)} />
                 {props.task.name}
             </h2>
-            <p>{props.task.description}</p>
-
+            <h3>{props.task.description}
+                <div id='alignRight'>
+                    <button id='updateBtn'>Update</button>
+                </div>
+            </h3>
         </div>
     )
 }

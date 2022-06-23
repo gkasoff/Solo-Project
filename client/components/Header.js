@@ -10,10 +10,6 @@ const Header = (props) => {
         <header>
             <h1>{props.title}</h1>
             <h2 style={{ color: 'blue' }}>In line Styling</h2>
-            <Button color='red' text='Add' onClick={onClick} />
-            <div>
-                <Button color='red' text='Fetch' onClick={onClick} />
-            </div>
         </header>
     )
 }

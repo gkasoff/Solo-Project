@@ -2,10 +2,22 @@ h1 {
     color: green;
 }
 
-img {
-    height: 300px
+body {
+    background-color: rgb(150, 177, 200);
 }
 
+#noTaskText {
+    color: royalblue
+}
+
+img {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+  }
 .task {
     background-color: pink;
 }
@@ -16,3 +28,36 @@ path {
     justify-content: center;
     align-content: flex-start;
 }
+
+#root {
+    border-style: dotted;
+}
+
+#updateBtn {
+    background-color: tomato;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 20px;
+   
+}
+  
+#updateBtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#updateBtn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  h3 {
+    margin: 10px 0px
+  }
+
+  h2 {
+    margin: 10px 0px
+  }
+
+  #alignRight {
+    text-align: left;
+  }
