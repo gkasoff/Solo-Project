@@ -124,6 +124,7 @@
     "terser": "^5.14.1",
     "terser-webpack-plugin": "^5.3.3",
     "uri-js": "^4.4.1",
+    "url-loader": "^4.1.1",
     "watchpack": "^2.4.0",
     "webpack-merge": "^5.8.0",
     "webpack-sources": "^3.2.3",

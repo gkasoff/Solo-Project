@@ -1,13 +1,21 @@
-h1 {
-    color: green;
+body {
+  background-color: rgb(0, 12, 62);
 }
 
-body {
-    background-color: rgb(150, 177, 200);
+#root {
+    background-color: rgb(20, 87, 145);
+    margin: 130px 150px 130px 150px;
+    /* opacity: 0.5; */
+    /* background-image: url(../assets/capture.png); */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 50px;
 }
 
 #noTaskText {
-    color: royalblue
+  font-family: 'Playfair Display', serif;
+  color:limegreen;
+  text-align: center;
+  /* font-weight: bold; */
 }
 
 img {
@@ -19,7 +27,7 @@ img {
     width: 200px;
   }
 .task {
-    background-color: pink;
+    background-color: white;
 }
 
 path {
@@ -30,7 +38,7 @@ path {
 }
 
 #root {
-    border-style: dotted;
+    border-style: outset;
 }
 
 #updateBtn {
@@ -55,9 +63,53 @@ path {
   }
 
   h2 {
+    color: navy;
     margin: 10px 0px
   }
 
   #alignRight {
     text-align: left;
   }
+
+  
+
+  .headerTitle {
+    /* background-color: white; */
+   background-image: url(../assets/capture.png);
+    /* background-blend-mode: multiply; */
+      background-repeat: no-repeat;
+      opacity: 10;
+      background-size: 100%;
+      background-position: center;
+    font-size: 20px;
+    /* background-repeat: no-repeat; */
+    
+    text-align: center;
+    padding-bottom: 30px;
+    /* height: 700px */
+  }
+
+  #firstp {
+    text-align: right;
+  }
+
+  .form-control {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  #name {
+    margin-left: 5px;
+  }
+
+  /* .add-form { */
+    /* background-image: url(../assets/capture.png);
+    background-size: 300px 200px;
+    width: 500px;
+    background-repeat: no-repeat; */
+  /* } */
+
+  h1 {
+    color: white;
+  }
+

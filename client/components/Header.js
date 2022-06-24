@@ -7,9 +7,9 @@ const Header = (props) => {
     }
 
     return (
-        <header>
-            <h1>{props.title}</h1>
-            <h2 style={{ color: 'blue' }}>In line Styling</h2>
+        <header class="headerTitle">
+            <p id="firstp" style={{ color: 'white' }}>{props.title}</p>
+            <h1 id='h1'>CODESMITH CHECKLIST</h1>
         </header>
     )
 }

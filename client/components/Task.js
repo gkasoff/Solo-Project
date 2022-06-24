@@ -5,7 +5,7 @@ import UpdateTask from './UpdateTask'
 const Task = (props) => {
     return (
         <div className='task'>
-            <h2 style={{ color: 'brown' }}>
+            <h2>
                 <FaTimes
                     style={{ color: 'red', cursor: 'pointer' }}
                     onClick={() => props.onDelete(props.task._id)} />

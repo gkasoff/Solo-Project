@@ -4,7 +4,6 @@ import Tasks from "./components/Tasks"
 import AddTask from "./components/AddTask"
 import { useState, useEffect } from 'react'
 import "./styles/main.css"
-import greenPic from "./assets/pic.jpg"
 
 const App = () => {
     const [tasks, setTasks] = useState([])
@@ -34,8 +33,9 @@ const App = () => {
         await fetch(`http://localhost:5000/goals/${id}`, {
             method: 'PATCH',
         })
-        alert('task complete!')
-        console.log(id)
+        alert('Task Complete!')
+        console.log('id is', id)
+        // setTasks(
         setTasks(tasks.filter((task) => task._id !== id))
         // fetchTasks();
     }
@@ -58,10 +58,9 @@ const App = () => {
 
     return (
         <div className='container'>
-            <img src={greenPic} alt="" />
-            <Header title="this is a title" />
+            <Header title="Hello User!" />
             <AddTask onAdd={addTask} />
-            {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h1 id='noTaskText'>No tasks!</h1>)}
+            {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
         </div>
     )
 };
