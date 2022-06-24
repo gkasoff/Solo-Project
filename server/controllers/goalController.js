@@ -18,6 +18,7 @@ const getGoals = asyncHandler(async (req, res, next) => {
 
 const getOneGoal = async (req, res, next) => {
     let goal;
+    console.log('controller test')
     try {
      const goal = await Goal.findById(req.params.id)
      if (goal === null) {
@@ -62,6 +63,7 @@ const updateGoal = asyncHandler(async (req, res, next) => {
     }
     try {
         await res.locals.goal.save();
+        // await res.locals.goal.remove()
         return next();
     } catch (err) {
         return next({message: 'unable to UPDATE goal', log: 'unable to UPDATE goal' })

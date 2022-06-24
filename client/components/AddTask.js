@@ -21,9 +21,9 @@ const AddTask = (props) => {
         setDescription('')
     }
     return (
-        <form classname='add-form' onSubmit={onSubmit}>
+        <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
-                <label for="name">Learning Topic</label>
+                <label htmlFor="name">Learning Topic</label>
                 <select name='name' id='name' value={name} onChange={(e) => setName(e.target.value)}>
                     <option value='Select Option'>Select Option</option>
                     <option value='AJAX'>AJAX</option>

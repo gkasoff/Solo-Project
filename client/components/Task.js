@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
+import UpdateTask from './UpdateTask'
 
 const Task = (props) => {
     return (
@@ -11,10 +12,12 @@ const Task = (props) => {
                 {props.task.name}
             </h2>
             <h3>{props.task.description}
-                <div id='alignRight'>
-                    <button id='updateBtn'>Update</button>
-                </div>
             </h3>
+            <UpdateTask onClick={() => {
+                console.log('test')
+                props.onUpdate(props.task._id)
+            }
+            }/>
         </div>
     )
 }
