@@ -1,4 +1,5 @@
 import React, { useInsertionEffect } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from "./components/Header"
 import Tasks from "./components/Tasks"
 import AddTask from "./components/AddTask"
@@ -57,11 +58,13 @@ const App = () => {
     }
 
     return (
-        <div className='container'>
-            <Header title="Hello User!" />
-            <AddTask onAdd={addTask} />
-            {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
-        </div>
+        <BrowserRouter>
+            <div className='container'>
+                <Header title="Completed Tasks" />
+                <AddTask onAdd={addTask} />
+                {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
+            </div>
+        </BrowserRouter>
     )
 };
 

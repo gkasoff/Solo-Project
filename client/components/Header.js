@@ -7,8 +7,12 @@ const Header = (props) => {
     }
 
     return (
-        <header class="headerTitle">
-            <p id="firstp" style={{ color: 'white' }}>{props.title}</p>
+        <header className="headerTitle">
+            <p id="firstp" style={{ color: 'white' }}>
+                <a href="http://localhost:3001/completedtasks">
+                    {props.title}
+                </a>
+            </p>
             <h1 id='h1'>CODESMITH CHECKLIST</h1>
         </header>
     )
