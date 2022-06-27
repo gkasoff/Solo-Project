@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button.js"
+import { Outlet, Link } from "react-router-dom";
 
 const Header = (props) => {
     const onClick = (e) => {
@@ -9,9 +9,7 @@ const Header = (props) => {
     return (
         <header className="headerTitle">
             <p id="firstp" style={{ color: 'white' }}>
-                <a href="http://localhost:3001/completedtasks">
-                    {props.title}
-                </a>
+                Hello, User!
             </p>
             <h1 id='h1'>CODESMITH CHECKLIST</h1>
         </header>

@@ -11,7 +11,7 @@ const Tasks = (props) => {
                     task={task}
                     onDelete={props.onDelete}
                     onUpdate={props.onUpdate}
-                />              
+                />
             )
             )
             }

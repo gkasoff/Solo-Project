@@ -1,12 +1,20 @@
 import React, { useInsertionEffect } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import Header from "./components/Header"
 import Tasks from "./components/Tasks"
+import Completed from "./components/Completed"
+import Main from "./Main"
 import AddTask from "./components/AddTask"
 import { useState, useEffect } from 'react'
 import "./styles/main.css"
 
+function navigate() {
+    let navigate = useNavigate();
+}
+const completedTasks = []
+
 const App = () => {
+    
     const [tasks, setTasks] = useState([])
     console.log('TASKS HERE', tasks)
     useEffect(() => {
@@ -31,14 +39,23 @@ const App = () => {
     }
 
     const updateTask = async (id) => {
+        tasks.forEach((el) => {
+            if (el._id === id) {
+                completedTasks.push(el)
+            }
+        })
+        // completedTasks.push(tasks._id)
+        console.log('completed tasks, ', completedTasks)
         await fetch(`http://localhost:5000/goals/${id}`, {
             method: 'PATCH',
         })
         alert('Task Complete!')
         console.log('id is', id)
         // setTasks(
+            
         setTasks(tasks.filter((task) => task._id !== id))
-        // fetchTasks();
+        // navigate("../success")
+        await fetchTasks();
     }
 
     const addTask = async (task) => {
@@ -57,15 +74,15 @@ const App = () => {
         setTasks([...tasks, data])
     }
 
+
+
     return (
-        <BrowserRouter>
-            <div className='container'>
-                <Header title="Completed Tasks" />
-                <AddTask onAdd={addTask} />
-                {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
-            </div>
-        </BrowserRouter>
+        <div className='container'>
+            <Header title="Completed Tasks" />
+            <Completed tasks={completedTasks}/>
+            <AddTask onAdd={addTask} />
+            {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
+        </div>
     )
 };
-
 export default App;

@@ -56,6 +56,7 @@ const updateGoal = asyncHandler(async (req, res, next) => {
     // console.log(req.body)
     // console.log(res.locals.goal.name)
     if (req.body.name) {
+        // res.locals.goal.name = "Completed task!"
         res.locals.goal.name = req.body.name
     }
     if (req.body.description) {

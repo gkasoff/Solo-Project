@@ -8,15 +8,15 @@ const AddTask = (props) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        if(!name) {
+        if (!name) {
             alert('Please select a Learning Topic')
             return
         }
-        if(!description) {
+        if (!description) {
             alert('Please add a Description')
             return
         }
-        props.onAdd( { name, description })
+        props.onAdd({ name, description })
         setName('')
         setDescription('')
     }
@@ -28,12 +28,15 @@ const AddTask = (props) => {
                     <option value='Select Option'>Select Option</option>
                     <option value='AJAX'>AJAX</option>
                     <option value='Algorithms'>Algorithms</option>
+                    <option value='Authentication'>Authentication</option>
                     <option value='Data Structures'>Data Structures</option>
-                    <option value='Frontend Fundamentals'>Frontend</option>
-                    <option value='Mongoose'>Mongoose</option>
+                    <option value='Databases'>Databases</option>
+                    <option value='Express'>Express</option>
+                    <option value='Frontend Fundamentals'>Frontend Fundamentals</option>
                     <option value='React'>React</option>
                     <option value='Recursion'>Recursion</option>
                     <option value='Redux'>Redux</option>
+                    <option value='Testing'>Testing</option>
                 </select>
             </div>
             <div className='form-control'>

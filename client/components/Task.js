@@ -17,7 +17,7 @@ const Task = (props) => {
                 console.log('test')
                 props.onUpdate(props.task._id)
             }
-            }/>
+            } />
         </div>
     )
 }
