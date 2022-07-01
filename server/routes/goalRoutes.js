@@ -19,6 +19,7 @@ router.get('/:id', getOneGoal, (req, res) => {
 
 // creating
 router.post('/', setGoal, (req, res) => {
+    console.log("posting using setgoal")
     return res.status(201).json(res.locals.newGoal)
 })
 

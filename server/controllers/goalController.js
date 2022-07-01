@@ -20,15 +20,15 @@ const getOneGoal = async (req, res, next) => {
     let goal;
     console.log('controller test')
     try {
-     const goal = await Goal.findById(req.params.id)
-     if (goal === null) {
-         return res.status(404).json({message: 'Cannot find goal'})
-     } else {
-        res.locals.goal = goal
-        return next()
-     }
+        const goal = await Goal.findById(req.params.id)
+        if (goal === null) {
+            return res.status(404).json({ message: 'Cannot find goal' })
+        } else {
+            res.locals.goal = goal
+            return next()
+        }
     } catch (err) {
-     return next({message: 'Goal ID not found', log: 'Goal ID not found'})
+        return next({ message: 'Goal ID not found', log: 'Goal ID not found' })
     }
 }
 
@@ -41,6 +41,7 @@ const setGoal = async (req, res, next) => {
         description: req.body.description
     })
     try {
+        console.log("logging values " + goal.name + " " + goal.description)
         const newGoal = await goal.save()
         res.locals.newGoal = newGoal
         return next()
@@ -67,7 +68,7 @@ const updateGoal = asyncHandler(async (req, res, next) => {
         // await res.locals.goal.remove()
         return next();
     } catch (err) {
-        return next({message: 'unable to UPDATE goal', log: 'unable to UPDATE goal' })
+        return next({ message: 'unable to UPDATE goal', log: 'unable to UPDATE goal' })
     }
 })
 
@@ -75,12 +76,12 @@ const updateGoal = asyncHandler(async (req, res, next) => {
 // @route  Delete /api/goals/:id
 // @access  Private
 const deleteGoal = asyncHandler(async (req, res, next) => {
-   try {
-    await res.locals.goal.remove()
-    return next()
-   } catch (err) {
-    return next({message: 'unable to delete'})
-   }
+    try {
+        await res.locals.goal.remove()
+        return next()
+    } catch (err) {
+        return next({ message: 'unable to delete' })
+    }
 })
 
 module.exports = {

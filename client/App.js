@@ -1,5 +1,6 @@
 import React, { useInsertionEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, BrowserRouter, Routes, Route, Outlet, Link } from 'react-router-dom';
+
 import Header from "./components/Header"
 import Tasks from "./components/Tasks"
 import Completed from "./components/Completed"
@@ -11,10 +12,10 @@ import "./styles/main.css"
 function navigate() {
     let navigate = useNavigate();
 }
-const completedTasks = []
+// const completedTasks = []
 
 const App = () => {
-    
+
     const [tasks, setTasks] = useState([])
     console.log('TASKS HERE', tasks)
     useEffect(() => {
@@ -52,7 +53,7 @@ const App = () => {
         alert('Task Complete!')
         console.log('id is', id)
         // setTasks(
-            
+
         setTasks(tasks.filter((task) => task._id !== id))
         // navigate("../success")
         await fetchTasks();
@@ -79,7 +80,7 @@ const App = () => {
     return (
         <div className='container'>
             <Header title="Completed Tasks" />
-            <Completed tasks={completedTasks}/>
+            <Link to="/completed">Completed Tasks</Link>
             <AddTask onAdd={addTask} />
             {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
         </div>

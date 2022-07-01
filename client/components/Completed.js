@@ -4,20 +4,23 @@ import { Outlet, Link } from "react-router-dom";
 import Main from "../Main"
 import Main2 from "../Main2"
 import Header from "./Header"
+import App from '../App'
 
 
 function Completed(props) {
   return (
     <div>
-      <BrowserRouter>
-      <Link to="/completed">Completed Tasks</Link>
-        <Routes>
-        <Route path="/completed" element={<Main example={props}/>} />
+      {/* <BrowserRouter> */}
+      <Link to="/">back to app</Link>
+      <Main2 />
+
+      {/* <Routes>
+          <Route path="/" element={<App />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   )
 }
 
-      
+
 export default Completed
