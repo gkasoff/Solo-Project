@@ -8,11 +8,17 @@ import Main from "./Main"
 import AddTask from "./components/AddTask"
 import { useState, useEffect } from 'react'
 import "./styles/main.css"
+import styled from 'styled-components'
+
+
+const StyledLink = styled(Link)`
+  color: white;
+`;
 
 function navigate() {
     let navigate = useNavigate();
 }
-// const completedTasks = []
+const completedTasks = []
 
 const App = () => {
 
@@ -44,6 +50,8 @@ const App = () => {
             if (el._id === id) {
                 completedTasks.push(el)
             }
+            console.log('Completed HERE', completedTasks)
+
         })
         // completedTasks.push(tasks._id)
         console.log('completed tasks, ', completedTasks)
@@ -80,10 +88,13 @@ const App = () => {
     return (
         <div className='container'>
             <Header title="Completed Tasks" />
-            <Link to="/completed">Completed Tasks</Link>
+            <StyledLink to="/completed">Completed Tasks</StyledLink>
             <AddTask onAdd={addTask} />
             {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} />) : (<h2 id='noTaskText'>NO TASKS!</h2>)}
         </div>
     )
 };
-export default App;
+export { App as default, StyledLink, completedTasks };
+// module.exports = {
+//      
+// }

@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route, Outlet, Link } from 'react-router-dom';
 import App from './App';
 import Completed from './components/Completed'
 import Main2 from './Main2'
+import { completedTasks } from './App';
 
 const root = ReactDOM.createRoot(document.querySelector("#root"))
-const completedTasks = []
+// const completedTasks = []
 
 root.render(
     <div>
@@ -14,7 +15,9 @@ root.render(
         {/* <Completed tasks={completedTasks} /> */}
         <BrowserRouter>
             <Routes>
-                <Route path="/completed" element={<Completed />} />
+                {console.log('Completed index ', completedTasks)}
+
+                <Route path="/completed" element={<Completed test={completedTasks} />} />
                 <Route path="/" element={<App />} />
 
             </Routes>

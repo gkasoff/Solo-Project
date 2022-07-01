@@ -2,6 +2,10 @@ body {
   background-color: rgb(0, 12, 62);
 }
 
+.Link {
+  color: white;
+}
+
 #root {
   background-color: rgb(20, 87, 145);
   margin: 130px 150px 130px 150px;
